@@ -1,8 +1,14 @@
 {
   "manifest_version": 2,
   "name": "ServiceNow Admin Login Helper",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Intercepts OAuth redirects and allows admin login with /login.do",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "servicenow-admin-helper@DaBenjle",
+      "strict_min_version": "57.0"
+    }
+  },
   "permissions": [
     "webRequest",
     "webRequestBlocking",
@@ -14,12 +20,12 @@
     "scripts": ["background.js"],
     "persistent": true
   },
-  "web_accessible_resources": ["prompt.html"],
   "browser_action": {
     "default_popup": "popup.html",
     "default_title": "ServiceNow Admin Helper"
   },
   "icons": {
     "48": "icon.png"
-  }
+  },
+  "web_accessible_resources": ["prompt.html"]
 }

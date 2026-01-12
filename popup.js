@@ -30,13 +30,22 @@ function renderInstances() {
   instances.forEach((instance, index) => {
     const item = document.createElement("div");
     item.className = "instance-item";
-    item.innerHTML = `
-      <input type="text" 
-             value="${instance}" 
-             placeholder="example.service-now.com"
-             data-index="${index}">
-      <button class="btn-remove" data-index="${index}">Remove</button>
-    `;
+
+    // Create input
+    const input = document.createElement("input");
+    input.type = "text";
+    input.value = instance;
+    input.placeholder = "example.service-now.com";
+    input.setAttribute("data-index", index);
+
+    // Create remove button
+    const removeBtn = document.createElement("button");
+    removeBtn.className = "btn-remove";
+    removeBtn.textContent = "Remove";
+    removeBtn.setAttribute("data-index", index);
+
+    item.appendChild(input);
+    item.appendChild(removeBtn);
     instanceList.appendChild(item);
   });
 
