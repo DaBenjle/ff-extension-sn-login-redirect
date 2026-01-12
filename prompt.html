@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ServiceNow Login Choice</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+      }
+
+      .dialog {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        max-width: 450px;
+        text-align: center;
+        animation: slideIn 0.3s ease-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        margin: 0 0 10px 0;
+        color: #333;
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin: 0 0 30px 0;
+        color: #666;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .instance {
+        background: #f5f5f5;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        color: #0066cc;
+        margin: 15px 0 25px 0;
+      }
+
+      button {
+        border: none;
+        padding: 16px 32px;
+        margin: 8px;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;
+        transition: all 0.2s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      button:active {
+        transform: scale(0.98);
+      }
+
+      #admin-btn {
+        background: #0066cc;
+        color: white;
+      }
+
+      #admin-btn:hover {
+        background: #0052a3;
+        box-shadow: 0 4px 12px rgba(0, 102, 204, 0.4);
+      }
+
+      #oauth-btn {
+        background: #6c757d;
+        color: white;
+      }
+
+      #oauth-btn:hover {
+        background: #5a6268;
+        box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+      }
+
+      .countdown {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+        font-size: 13px;
+        color: #999;
+      }
+
+      .countdown strong {
+        color: #0066cc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dialog">
+      <div class="icon">🔐</div>
+      <h1>ServiceNow Login</h1>
+      <p>OAuth redirect detected for:</p>
+      <div class="instance" id="instance"></div>
+      <p>How would you like to login?</p>
+
+      <button id="admin-btn"><strong>Admin Login</strong> (/login.do)</button>
+
+      <button id="oauth-btn">Continue with OAuth</button>
+
+      <div class="countdown">
+        Auto-selecting OAuth in <strong id="timer">10</strong> seconds...
+      </div>
+    </div>
+
+    <script src="prompt.js"></script>
+  </body>
+</html>

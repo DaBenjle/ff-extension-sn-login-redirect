@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "ServiceNow Admin Login Helper",
+  "version": "1.0",
+  "description": "Intercepts OAuth redirects and allows admin login with /login.do",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "tabs",
+    "*://*.service-now.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "web_accessible_resources": ["prompt.html"],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "ServiceNow Admin Helper"
+  },
+  "icons": {
+    "48": "icon.png"
+  }
+}
