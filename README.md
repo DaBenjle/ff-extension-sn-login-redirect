@@ -354,6 +354,10 @@ servicenow-admin-helper/
 
 MIT License
 
+...
+
+AI generated the icon.svg. If it derived its material from your assets, please let me know and I'll take it down.
+
 ## 🙏 Acknowledgments
 
 Built for ServiceNow administrators who value efficiency and want to maintain their workflow when sessions expire.
